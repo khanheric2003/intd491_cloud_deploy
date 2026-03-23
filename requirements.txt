@@ -7,7 +7,7 @@ matplotlib==3.10.8
 numpy==2.4.2
 packaging==26.0
 pandas==3.0.1
-pillow==12.1.1
+pillow>=7.1.0,<12
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
 scikit-learn==1.8.0
@@ -16,7 +16,7 @@ seaborn==0.13.2
 six==1.17.0
 threadpoolctl==3.6.0
 torch
-streamlit==1.41.1
-statsmodels==0.14.0
+streamlit>=1.40.0
+statsmodels>=0.13.0
 setuptools>=68.0
 wheel>=0.40.0

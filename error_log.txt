@@ -1,0 +1,396 @@
+
+[     UTC     ] Logs for intd491clouddeploy-meomeomeo.streamlit.app/
+────────────────────────────────────────────────────────────────────────────────────────
+[22:32:20] 🚀 Starting up repository: 'intd491_cloud_deploy', branch: 'main', main module: 'cloud_host.py'
+[22:32:20] 🐙 Cloning repository...
+[22:32:22] 🐙 Cloning into '/mount/src/intd491_cloud_deploy'...
+
+[22:32:22] 🐙 Cloned repository!
+[22:32:22] 🐙 Pulling code changes from Github...
+[22:32:23] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit==1.41.1 depends on pillow>=7.1.0,<12 and you
+      require pillow==12.1.1, we can conclude that your requirements and
+      streamlit==1.41.1 are incompatible.
+      And because you require streamlit==1.41.1, we can conclude that your
+      requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+Resolved 4 packages in 109ms
+Prepared 4 packages in 117ms
+Installed 4 packages in 14ms
+ + markdown-it-py==4.0.0[2026-03-23 22:32:24.291152] 
+ + mdurl==0.1.2
+ + pygments==2.19.2
+ + rich==14.3.3
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 5.5 MB/s eta 0:00:00[2026-03-23 22:32:25.702365] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 348.0 MB/s eta 0:00:00[2026-03-23 22:32:26.042287] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 371.2 MB/s eta 0:00:00[2026-03-23 22:32:26.510850] 
+Collecting pillow==12.1.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-12.1.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 345.1 MB/s eta 0:00:00[2026-03-23 22:32:27.261418] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit==1.41.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting statsmodels==0.14.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.0.tar.gz (19.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.4/19.4 MB 175.2 MB/s eta 0:00:00[2026-03-23 22:32:27.829306] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-pyvr5vtm/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-pyvr5vtm/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-pyvr5vtm/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 19, in <module>
+      ModuleNotFoundError: No module named 'pkg_resources'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 14.5 MB/s eta 0:00:00[2026-03-23 22:32:44.118429] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 262.6 MB/s eta 0:00:00[2026-03-23 22:32:44.131130] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 77.5 MB/s eta 0:00:00[2026-03-23 22:32:44.159690] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:32:46] ❗️ installer returned a non-zero exit code
+[22:32:46] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
+[22:32:46] 🐙 Pulling code changes from Github...
+[22:32:47] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit==1.41.1 depends on pillow>=7.1.0,<12 and you
+      require pillow==12.1.1, we can conclude that your requirements and
+      streamlit==1.41.1 are incompatible.
+      And because you require streamlit==1.41.1, we can conclude that your
+      requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+Audited 1 package in 1ms
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 5.6 MB/s eta 0:00:00[2026-03-23 22:32:49.533567] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 337.9 MB/s eta 0:00:00[2026-03-23 22:32:49.879536] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 156.0 MB/s eta 0:00:00[2026-03-23 22:32:50.339665] 
+Collecting pillow==12.1.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-12.1.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 271.4 MB/s eta 0:00:00[2026-03-23 22:32:50.973707] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit==1.41.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting statsmodels==0.14.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.0.tar.gz (19.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.4/19.4 MB 229.0 MB/s eta 0:00:00[2026-03-23 22:32:51.488900] 
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-s6i4p53s/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-s6i4p53s/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-s6i4p53s/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 19, in <module>
+      ModuleNotFoundError: No module named 'pkg_resources'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 13.2 MB/s eta 0:00:00[2026-03-23 22:33:07.711967] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 229.5 MB/s eta 0:00:00[2026-03-23 22:33:07.726158] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 71.4 MB/s eta 0:00:00[2026-03-23 22:33:07.757182] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:33:10] ❗️ installer returned a non-zero exit code
+[22:36:13] 🐙 Pulling code changes from Github...
+[22:36:14] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit==1.41.1 depends on pillow>=7.1.0,<12 and you
+      require pillow==12.1.1, we can conclude that your requirements and
+      streamlit==1.41.1 are incompatible.
+      And because you require streamlit==1.41.1, we can conclude that your
+      requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.14.3 environment at /home/adminuser/venv
+Audited 1 package in 1ms
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 6.9 MB/s eta 0:00:00[2026-03-23 22:36:16.672169] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 261.9 MB/s eta 0:00:00[2026-03-23 22:36:17.040526] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 251.3 MB/s eta 0:00:00[2026-03-23 22:36:17.498966] 
+Collecting pillow==12.1.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-12.1.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 214.7 MB/s eta 0:00:00[2026-03-23 22:36:18.198810] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit==1.41.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting statsmodels==0.14.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.0.tar.gz (19.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.4/19.4 MB 171.7 MB/s eta 0:00:00[2026-03-23 22:36:18.798261] 
+  Installing build dependencies: started
