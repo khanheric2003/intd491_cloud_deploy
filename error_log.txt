@@ -394,3 +394,974 @@ Collecting statsmodels==0.14.0 (from -r /mount/src/intd491_cloud_deploy/requirem
   Downloading statsmodels-0.14.0.tar.gz (19.4 MB)
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.4/19.4 MB 171.7 MB/s eta 0:00:00[2026-03-23 22:36:18.798261] 
   Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+          ~~~~^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/adminuser/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-6g__zg_x/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-6g__zg_x/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-6g__zg_x/overlay/lib/python3.14/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 19, in <module>
+      ModuleNotFoundError: No module named 'pkg_resources'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 13.2 MB/s eta 0:00:00[2026-03-23 22:36:34.741403] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 293.3 MB/s eta 0:00:00[2026-03-23 22:36:34.755199] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 64.5 MB/s eta 0:00:00[2026-03-23 22:36:34.789120] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:36:37] ❗️ installer returned a non-zero exit code
+[22:38:29] 🚀 Starting up repository: 'intd491_cloud_deploy', branch: 'main', main module: 'cloud_host.py'
+[22:38:29] 🐙 Cloning repository...
+[22:38:31] 🐙 Cloning into '/mount/src/intd491_cloud_deploy'...
+
+[22:38:31] 🐙 Cloned repository!
+[22:38:31] 🐙 Pulling code changes from Github...
+[22:38:32] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.12.13 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit==1.41.1 depends on pillow>=7.1.0,<12 and you
+      require pillow==12.1.1, we can conclude that your requirements and
+      streamlit==1.41.1 are incompatible.
+      And because you require streamlit==1.41.1, we can conclude that your
+      requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.12.13 environment at /home/adminuser/venv
+Resolved 4 packages in 100ms
+Prepared 4 packages in 112ms
+Installed 4 packages in 12ms
+ + markdown-it-py==4.0.0
+ + mdurl==0.1.2
+ + pygments==2.19.2
+ + rich==14.3.3
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 6.8 MB/s eta 0:00:00[2026-03-23 22:38:34.866703] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 174.7 MB/s eta 0:00:00[2026-03-23 22:38:35.230732] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 194.8 MB/s eta 0:00:00[2026-03-23 22:38:35.808515] 
+Collecting pillow==12.1.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 66.8 MB/s eta 0:00:00[2026-03-23 22:38:36.640503] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit==1.41.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting statsmodels==0.14.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.0 kB)
+Collecting setuptools>=68.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 21))
+  Downloading setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+Collecting wheel>=0.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 22))
+  Downloading wheel-0.46.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting altair<6,>=4.0 (from streamlit==1.41.1->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+Collecting blinker<2,>=1.0.0 (from streamlit==1.41.1->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cachetools<6,>=4.0 (from streamlit==1.41.1->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting click<9,>=7.0 (from streamlit==1.41.1->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is looking at multiple versions of streamlit to determine which version is compatible with other requirements. This could take a while.
+ERROR: Cannot install -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19), -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6) and packaging==26.0 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.41.1 depends on packaging<25 and >=20
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 16.5 MB/s eta 0:00:00[2026-03-23 22:38:39.750901] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 145.5 MB/s eta 0:00:00[2026-03-23 22:38:39.762696] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 100.9 MB/s eta 0:00:00[2026-03-23 22:38:39.787183] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:38:41] ❗️ installer returned a non-zero exit code
+[22:38:41] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
+[22:38:41] 🐙 Pulling code changes from Github...
+[22:38:42] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.12.13 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit>=1.40.0 depends on pandas>=1.4.0,<3 and only the
+      following versions of streamlit are available:
+          streamlit<=1.40.0
+          streamlit==1.40.1
+          streamlit==1.40.2
+          streamlit==1.41.0
+          streamlit==1.41.1
+          streamlit==1.42.0
+          streamlit==1.42.1
+          streamlit==1.42.2
+          streamlit==1.43.0
+          streamlit==1.43.1
+          streamlit==1.43.2
+          streamlit==1.44.0
+          streamlit==1.44.1
+          streamlit==1.45.0
+          streamlit==1.45.1
+          streamlit==1.46.0
+          streamlit==1.46.1
+          streamlit==1.47.0
+          streamlit==1.47.1
+          streamlit==1.48.0
+          streamlit==1.48.1
+          streamlit==1.49.0
+          streamlit==1.49.1
+          streamlit==1.50.0
+          streamlit==1.51.0
+          streamlit==1.52.0
+          streamlit==1.52.1
+          streamlit==1.52.2
+          streamlit==1.53.0
+          streamlit==1.53.1
+          streamlit==1.54.0
+          streamlit==1.55.0
+      we can conclude that streamlit>=1.40.0 depends on pandas>=1.4.0,<3.
+      And because you require pandas==3.0.1 and streamlit>=1.40.0, we can
+      conclude that your requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.12.13 environment at /home/adminuser/venv
+Audited 1 package in 1ms
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 5.3 MB/s eta 0:00:00[2026-03-23 22:38:45.150255] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 119.9 MB/s eta 0:00:00[2026-03-23 22:38:45.516032] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 119.6 MB/s eta 0:00:00[2026-03-23 22:38:46.066987] 
+Collecting pillow<12,>=7.1.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 200.2 MB/s eta 0:00:00[2026-03-23 22:38:46.802161] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.55.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting statsmodels>=0.13.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+Collecting setuptools>=68.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 21))
+  Downloading setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+Collecting wheel>=0.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 22))
+  Downloading wheel-0.46.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting filelock (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading filelock-3.25.2-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.10.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting setuptools>=68.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 21))
+  Downloading setuptools-81.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading fsspec-2026.2.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==13.0.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading cuda_toolkit-13.0.2-py2.py3-none-any.whl.metadata (9.4 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading cuda_bindings-13.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+Collecting nvidia-cudnn-cu13==9.19.0.56 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cudnn_cu13-9.19.0.56-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparselt-cu13==0.8.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusparselt_cu13-0.8.0-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting nvidia-nccl-cu13==2.28.9 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nccl_cu13-2.28.9-py3-none-manylinux_2_18_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting triton==3.6.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading triton-3.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cublas==13.1.0.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cublas-13.1.0.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvjitlink-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.8 kB)
+Collecting altair!=5.4.0,!=5.4.1,<7,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading altair-6.0.0-py3-none-any.whl.metadata (11 kB)
+Collecting blinker<2,>=1.5.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cachetools<8,>=5.5 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-7.0.5-py3-none-any.whl.metadata (5.6 kB)
+Collecting click<9,>=7.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading gitpython-3.1.46-py3-none-any.whl.metadata (13 kB)
+INFO: pip is looking at multiple versions of streamlit to determine which version is compatible with other requirements. This could take a while.
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.54.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting cachetools<7,>=5.5 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-6.2.6-py3-none-any.whl.metadata (5.6 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.53.1-py3-none-any.whl.metadata (10 kB)
+  Downloading streamlit-1.53.0-py3-none-any.whl.metadata (10 kB)
+  Downloading streamlit-1.52.2-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.52.1-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.52.0-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.51.0-py3-none-any.whl.metadata (9.5 kB)
+Collecting altair!=5.4.0,!=5.4.1,<6,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+INFO: pip is still looking at multiple versions of streamlit to determine which version is compatible with other requirements. This could take a while.
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.50.0-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.49.1-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.49.0-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.48.1-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.48.0-py3-none-any.whl.metadata (9.5 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading streamlit-1.47.1-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.47.0-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.46.1-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.46.0-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.45.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting cachetools<6,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.45.0-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.44.1-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.44.0-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.2-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.1-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.0-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.2-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.1-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.0-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.41.0-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.40.2-py2.py3-none-any.whl.metadata (8.4 kB)
+  Downloading streamlit-1.40.1-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.40.0-py2.py3-none-any.whl.metadata (8.5 kB)
+ERROR: Cannot install -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15), -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19), -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6), packaging==26.0 and pandas==3.0.1 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.55.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.54.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.53.1 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.53.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.2 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.1 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.0 depends on pandas<3 and >=1.4.0
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.51.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.50.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.49.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.49.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.48.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.48.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.47.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.47.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.46.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.46.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.45.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.45.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.44.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.44.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.41.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.41.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.0 depends on packaging<25 and >=20
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 16.3 MB/s eta 0:00:00[2026-03-23 22:38:52.980223] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 183.9 MB/s eta 0:00:00[2026-03-23 22:38:52.992198] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 79.3 MB/s eta 0:00:00[2026-03-23 22:38:53.019456] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:38:55] ❗️ installer returned a non-zero exit code
+[22:39:37] 🖥 Provisioning machine...
+[22:39:42] 🎛 Preparing system...
+[22:39:49] ⛓ Spinning up manager process...
+[22:39:38] 🚀 Starting up repository: 'intd491_cloud_deploy', branch: 'main', main module: 'cloud_host.py'
+[22:39:38] 🐙 Cloning repository...
+[22:39:39] 🐙 Cloning into '/mount/src/intd491_cloud_deploy'...
+
+[22:39:39] 🐙 Cloned repository!
+[22:39:39] 🐙 Pulling code changes from Github...
+[22:39:40] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.11.15 environment at /home/adminuser/venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because streamlit>=1.40.0 depends on pandas>=1.4.0,<3 and only the
+      following versions of streamlit are available:
+          streamlit<=1.40.0
+          streamlit==1.40.1
+          streamlit==1.40.2
+          streamlit==1.41.0
+          streamlit==1.41.1
+          streamlit==1.42.0
+          streamlit==1.42.1
+          streamlit==1.42.2
+          streamlit==1.43.0
+          streamlit==1.43.1
+          streamlit==1.43.2
+          streamlit==1.44.0
+          streamlit==1.44.1
+          streamlit==1.45.0
+          streamlit==1.45.1
+          streamlit==1.46.0
+          streamlit==1.46.1
+          streamlit==1.47.0
+          streamlit==1.47.1
+          streamlit==1.48.0
+          streamlit==1.48.1
+          streamlit==1.49.0
+          streamlit==1.49.1
+          streamlit==1.50.0
+          streamlit==1.51.0
+          streamlit==1.52.0
+          streamlit==1.52.1
+          streamlit==1.52.2
+          streamlit==1.53.0
+          streamlit==1.53.1
+          streamlit==1.54.0
+          streamlit==1.55.0
+      we can conclude that streamlit>=1.40.0 depends on pandas>=1.4.0,<3.
+      And because you require pandas==3.0.1 and streamlit>=1.40.0, we can
+      conclude that your requirements are unsatisfiable.
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.11.15 environment at /home/adminuser/venv
+Resolved 4 packages in 112ms
+Prepared 4 packages in 126ms
+Installed 4 packages in 15ms
+ + markdown-it-py==4.0.0[2026-03-23 22:39:41.977650] 
+ + mdurl==0.1.2
+ + pygments==2.19.2
+ + rich==14.3.3
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+Using standard pip install.
+Collecting contourpy==1.3.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 1))
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler==0.12.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 2))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.61.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 3))
+  Downloading fonttools-4.61.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.2/114.2 kB 5.1 MB/s eta 0:00:00[2026-03-23 22:39:43.411372] 
+Collecting joblib==1.5.3 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 4))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting kiwisolver==1.4.9 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 5))
+  Downloading kiwisolver-1.4.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.3 kB)
+Collecting matplotlib==3.10.8 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 147.2 MB/s eta 0:00:00[2026-03-23 22:39:43.806540] 
+Collecting numpy==2.4.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 7))
+  Downloading numpy-2.4.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 8))
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==3.0.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 9))
+  Downloading pandas-3.0.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 183.4 MB/s eta 0:00:00[2026-03-23 22:39:44.298693] 
+Collecting pillow<12,>=7.1.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 10))
+  Downloading pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting pyparsing==3.3.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 11))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 12))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting scikit-learn==1.8.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 13))
+  Downloading scikit_learn-1.8.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.17.1 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 14))
+  Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 151.9 MB/s eta 0:00:00[2026-03-23 22:39:45.016173] 
+Collecting seaborn==0.13.2 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting six==1.17.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 16))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting threadpoolctl==3.6.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 17))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting torch (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading torch-2.11.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.55.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting statsmodels>=0.13.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 20))
+  Downloading statsmodels-0.14.6-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+Collecting setuptools>=68.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 21))
+  Downloading setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+Collecting wheel>=0.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 22))
+  Downloading wheel-0.46.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting filelock (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading filelock-3.25.2-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.10.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting setuptools>=68.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 21))
+  Downloading setuptools-81.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading fsspec-2026.2.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==13.0.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading cuda_toolkit-13.0.2-py2.py3-none-any.whl.metadata (9.4 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading cuda_bindings-13.2.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+Collecting nvidia-cudnn-cu13==9.19.0.56 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cudnn_cu13-9.19.0.56-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparselt-cu13==0.8.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusparselt_cu13-0.8.0-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting nvidia-nccl-cu13==2.28.9 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nccl_cu13-2.28.9-py3-none-manylinux_2_18_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting triton==3.6.0 (from torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading triton-3.6.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cublas==13.1.0.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cublas-13.1.0.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvjitlink-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 18))
+  Downloading nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.8 kB)
+Collecting altair!=5.4.0,!=5.4.1,<7,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading altair-6.0.0-py3-none-any.whl.metadata (11 kB)
+Collecting blinker<2,>=1.5.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cachetools<8,>=5.5 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-7.0.5-py3-none-any.whl.metadata (5.6 kB)
+Collecting click<9,>=7.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading gitpython-3.1.46-py3-none-any.whl.metadata (13 kB)
+INFO: pip is looking at multiple versions of streamlit to determine which version is compatible with other requirements. This could take a while.
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.54.0-py3-none-any.whl.metadata (9.8 kB)
+Collecting cachetools<7,>=5.5 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-6.2.6-py3-none-any.whl.metadata (5.6 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.53.1-py3-none-any.whl.metadata (10 kB)
+  Downloading streamlit-1.53.0-py3-none-any.whl.metadata (10 kB)
+  Downloading streamlit-1.52.2-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.52.1-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.52.0-py3-none-any.whl.metadata (9.8 kB)
+  Downloading streamlit-1.51.0-py3-none-any.whl.metadata (9.5 kB)
+Collecting altair!=5.4.0,!=5.4.1,<6,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+INFO: pip is still looking at multiple versions of streamlit to determine which version is compatible with other requirements. This could take a while.
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.50.0-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.49.1-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.49.0-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.48.1-py3-none-any.whl.metadata (9.5 kB)
+  Downloading streamlit-1.48.0-py3-none-any.whl.metadata (9.5 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading streamlit-1.47.1-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.47.0-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.46.1-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.46.0-py3-none-any.whl.metadata (9.0 kB)
+  Downloading streamlit-1.45.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting cachetools<6,>=4.0 (from streamlit>=1.40.0->-r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting streamlit>=1.40.0 (from -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19))
+  Downloading streamlit-1.45.0-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.44.1-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.44.0-py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.2-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.1-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.43.0-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.2-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.1-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.42.0-py2.py3-none-any.whl.metadata (8.9 kB)
+  Downloading streamlit-1.41.1-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.41.0-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.40.2-py2.py3-none-any.whl.metadata (8.4 kB)
+  Downloading streamlit-1.40.1-py2.py3-none-any.whl.metadata (8.5 kB)
+  Downloading streamlit-1.40.0-py2.py3-none-any.whl.metadata (8.5 kB)
+ERROR: Cannot install -r /mount/src/intd491_cloud_deploy/requirements.txt (line 15), -r /mount/src/intd491_cloud_deploy/requirements.txt (line 19), -r /mount/src/intd491_cloud_deploy/requirements.txt (line 6), packaging==26.0 and pandas==3.0.1 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.55.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.54.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.53.1 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.53.0 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.2 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.1 depends on pandas<3 and >=1.4.0
+    The user requested pandas==3.0.1
+    seaborn 0.13.2 depends on pandas>=1.2
+    streamlit 1.52.0 depends on pandas<3 and >=1.4.0
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.51.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.50.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.49.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.49.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.48.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.48.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.47.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.47.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.46.1 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.46.0 depends on packaging<26 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.45.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.45.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.44.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.44.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.43.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.42.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.41.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.41.0 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.2 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.1 depends on packaging<25 and >=20
+    The user requested packaging==26.0
+    matplotlib 3.10.8 depends on packaging>=20.0
+    streamlit 1.40.0 depends on packaging<25 and >=20
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Checking if Streamlit is installed
+Installing rich for an improved exception logging
+Using standard pip install.
+Collecting rich>=10.14.0
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB 13.0 MB/s eta 0:00:00[2026-03-23 22:39:51.427924] 
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 202.3 MB/s eta 0:00:00[2026-03-23 22:39:51.441907] 
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 67.6 MB/s eta 0:00:00[2026-03-23 22:39:51.473287] 
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+  Attempting uninstall: pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+  Attempting uninstall: mdurl
+    Found existing installation: mdurl 0.1.2
+    Uninstalling mdurl-0.1.2:
+      Successfully uninstalled mdurl-0.1.2
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 4.0.0
+    Uninstalling markdown-it-py-4.0.0:
+      Successfully uninstalled markdown-it-py-4.0.0
+  Attempting uninstall: rich
+    Found existing installation: rich 14.3.3
+    Uninstalling rich-14.3.3:
+      Successfully uninstalled rich-14.3.3
+Successfully installed markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.19.2 rich-14.3.3
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[22:39:53] ❗️ installer returned a non-zero exit code
+[22:39:53] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
