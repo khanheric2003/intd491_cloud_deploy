@@ -32,8 +32,8 @@ export function ClassDistributionChart({
       ]}
       layout={{
         autosize: true,
-        height: 320,
-        margin: { t: 12, l: 48, r: 18, b: 80 },
+        height: 350,
+        margin: { t: 12, l: 48, r: 18, b: 110 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         xaxis: {
@@ -47,7 +47,7 @@ export function ClassDistributionChart({
           gridcolor: "rgba(30, 35, 48, 0.12)"
         }
       }}
-      style={{ width: "100%", height: "320px" }}
+      style={{ width: "100%", height: "350px" }}
       useResizeHandler
     />
   );
