@@ -131,7 +131,7 @@ export default function GeneralizationPage() {
     {
       metric: '% African American',
       florida: `${((floridaMetrics.race['African-American'] || 0) / floridaMetrics.totalRecords * 100).toFixed(1)}%`,
-      georgia: `${((georgiaMetrics.race['BLACK'] || 0) / georgiaMetrics.totalRecords * 100).toFixed(1)}%`,
+      georgia: `${((georgiaMetrics.race['African-American'] || 0) / georgiaMetrics.totalRecords * 100).toFixed(1)}%`,
     },
     {
       metric: 'Avg Prior Crimes',
