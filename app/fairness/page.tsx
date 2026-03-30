@@ -216,47 +216,57 @@ export default function FairnessPage() {
                 <thead>
                   <tr style={{ borderBottom: "2px solid #e2e8f0" }}>
                     <th style={{ padding: "12px", textAlign: "left" }}>Method</th>
+                    <th style={{ padding: "12px", textAlign: "left" }}>Type</th>
                     <th style={{ padding: "12px", textAlign: "right" }}>Accuracy</th>
                     <th style={{ padding: "12px", textAlign: "right" }}>AUC</th>
-                    <th style={{ padding: "12px", textAlign: "right" }}>DI</th>
+                    <th style={{ padding: "12px", textAlign: "right" }}>FPR Gap</th>
+                    <th style={{ padding: "12px", textAlign: "right" }}>FNR Gap</th>
                     <th style={{ padding: "12px", textAlign: "right" }}>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Baseline</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>69.1%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.74</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.58</td>
+                    <td style={{ padding: "12px" }}>Baseline RF</td>
+                    <td style={{ padding: "12px" }}>None</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>68.5%</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>0.727</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#ef4444" }}>+0.146</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#ef4444" }}>-0.312</td>
                     <td style={{ padding: "12px", textAlign: "right" }}>
                       <span className="badge badge-unfair">Unfair</span>
                     </td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Reweighting</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>66.8%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.71</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.72</td>
+                    <td style={{ padding: "12px" }}>No proxy variables</td>
+                    <td style={{ padding: "12px" }}>Pre-processing</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>56.3%</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>0.598</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#f59e0b" }}>+0.103</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#f59e0b" }}>-0.148</td>
                     <td style={{ padding: "12px", textAlign: "right" }}>
                       <span className="badge badge-warn">Improved</span>
                     </td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Equalized Odds</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>64.2%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.68</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.85</td>
+                    <td style={{ padding: "12px" }}>Threshold adjustment</td>
+                    <td style={{ padding: "12px" }}>Post-processing</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>66.2%</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>0.727</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#16a34a" }}>-0.002</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#16a34a" }}>-0.104</td>
                     <td style={{ padding: "12px", textAlign: "right" }}>
                       <span className="badge badge-fair">Fair</span>
                     </td>
                   </tr>
                   <tr>
-                    <td style={{ padding: "12px" }}>Reject Option</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>65.5%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.70</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.81</td>
+                    <td style={{ padding: "12px" }}>Fairlearn EqualizedOdds</td>
+                    <td style={{ padding: "12px" }}>In-processing</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>61.6%</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>0.N/A</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#f59e0b" }}>+0.107</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#f59e0b" }}>-0.127</td>
                     <td style={{ padding: "12px", textAlign: "right" }}>
-                      <span className="badge badge-fair">Fair</span>
+                      <span className="badge badge-warn">Improved</span>
                     </td>
                   </tr>
                 </tbody>
@@ -264,8 +274,8 @@ export default function FairnessPage() {
             </div>
 
             <p className="section-note" style={{ marginTop: "16px" }}>
-              The Reject Option method (recommended) achieves fairness while maintaining reasonable accuracy. 
-              This approach flags borderline predictions for human review instead of automated decisions.
+              Threshold adjustment achieves near-zero FPR gap at only 2.3% accuracy cost - but uses race at decision time,
+              which is ethically contested. Fairlearn optimizes during training, avoiding race-based decisions at prediction time.
             </p>
           </div>
         </section>
@@ -274,6 +284,7 @@ export default function FairnessPage() {
           <div className="section-card__body">
             <div className="section-card__header">
               <h2>Key Findings</h2>
+              <p>What our fairness audit shows</p>
             </div>
 
             <div style={{
@@ -288,11 +299,11 @@ export default function FairnessPage() {
                 borderLeft: "4px solid #f59e0b"
               }}>
                 <div style={{ fontWeight: 500, color: "#1e293b", marginBottom: "4px" }}>
-                  Performance Gap
+                  Racial disparity confirmed
                 </div>
                 <p style={{ margin: 0, fontSize: "14px", color: "#64748b" }}>
-                  The baseline model shows 7.8% disparate impact below the 0.8 fairness threshold, 
-                  indicating substantial bias against African Americans.
+                  Black defendants are flagged high risk 37.5% of the time when they would not reoffend, vs 22.9% for white
+                  defendants - a gap of +0.146 consistent across both RF and LR models.
                 </p>
               </div>
 
@@ -303,11 +314,11 @@ export default function FairnessPage() {
                 borderLeft: "4px solid #10b981"
               }}>
                 <div style={{ fontWeight: 500, color: "#1e293b", marginBottom: "4px" }}>
-                  Debiasing Effectiveness
+                  Mitigation is possible but costly
                 </div>
                 <p style={{ margin: 0, fontSize: "14px", color: "#64748b" }}>
-                  Equalized Odds post-processing achieves DI of 0.85, meeting fairness criteria, 
-                  with only 4.9% accuracy reduction.
+                  Threshold adjustment nearly eliminates the FPR gap (-0.002) at only 2.3% accuracy cost. Removing proxy
+                  variables reduces the gap 30% but costs 12% accuracy.
                 </p>
               </div>
 
@@ -318,10 +329,11 @@ export default function FairnessPage() {
                 borderLeft: "4px solid #0ea5e9"
               }}>
                 <div style={{ fontWeight: 500, color: "#1e293b", marginBottom: "4px" }}>
-                  Recommendation
+                  No free lunch - Chouldechovas impossibility
                 </div>
                 <p style={{ margin: 0, fontSize: "14px", color: "#64748b" }}>
-                  Deploy with reject option for borderline cases and implement continuous fairness monitoring.
+                  No single configuration achieves both high accuracy and full fairness simultaneously. Every mitigation
+                  involves a trade-off, confirming that algorithmic bias cannot be fully engineered away.
                 </p>
               </div>
             </div>
