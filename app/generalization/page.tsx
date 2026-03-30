@@ -106,7 +106,6 @@ export default function GeneralizationPage() {
   const featureImportance = [
     { feature: 'Age', florida: 0.185, georgia: 0.142 },
     { feature: 'Prior Crimes', florida: 0.203, georgia: 0.198 },
-    { feature: 'Race', florida: 0.156, georgia: 0.178 },
     { feature: 'Sex', florida: 0.089, georgia: 0.095 },
     { feature: 'Supervision Level', florida: 0.0, georgia: 0.142 },
     { feature: 'Gang Affiliation', florida: 0.0, georgia: 0.098 },
@@ -236,26 +235,30 @@ export default function GeneralizationPage() {
                     gap: '8px',
                     height: '24px',
                   }}>
-                    <div
-                      style={{
-                        background: '#0ea5e9',
-                        borderRadius: '4px',
-                        width: `${Math.max(item.florida * 100, 5)}%`,
-                        minWidth: '4px',
-                        height: '100%',
-                      }}
-                      title={`Florida: ${(item.florida * 100).toFixed(1)}%`}
-                    ></div>
-                    <div
-                      style={{
-                        background: '#10b981',
-                        borderRadius: '4px',
-                        width: `${Math.max(item.georgia * 100, 5)}%`,
-                        minWidth: '4px',
-                        height: '100%',
-                      }}
-                      title={`Georgia: ${(item.georgia * 100).toFixed(1)}%`}
-                    ></div>
+                    {item.florida > 0 && (
+                      <div
+                        style={{
+                          background: '#0ea5e9',
+                          borderRadius: '4px',
+                          width: `${Math.max(item.florida * 100, 5)}%`,
+                          minWidth: '4px',
+                          height: '100%',
+                        }}
+                        title={`Florida: ${(item.florida * 100).toFixed(1)}%`}
+                      ></div>
+                    )}
+                    {item.georgia > 0 && (
+                      <div
+                        style={{
+                          background: '#10b981',
+                          borderRadius: '4px',
+                          width: `${Math.max(item.georgia * 100, 5)}%`,
+                          minWidth: '4px',
+                          height: '100%',
+                        }}
+                        title={`Georgia: ${(item.georgia * 100).toFixed(1)}%`}
+                      ></div>
+                    )}
                   </div>
                 </div>
               ))}
