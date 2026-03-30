@@ -256,8 +256,14 @@ export function calculateGeorgiaMetrics(records: GeorgiaRecord[]): DatasetMetric
   const raceMap: { [key: string]: number } = {};
   const raceRecidivismMap: { [key: string]: { count: number; recidivism: number } } = {};
 
+  const georgiaRaceMap: { [key: string]: string } = {
+    'BLACK': 'African-American',
+    'WHITE': 'Caucasian',
+  };
+
   records.forEach((r) => {
-    const race = r.Race || 'Unknown';
+    const rawRace = r.Race || 'Unknown';
+    const race = georgiaRaceMap[rawRace] || rawRace;
     raceMap[race] = (raceMap[race] || 0) + 1;
 
     const isRecidivist =
@@ -292,8 +298,8 @@ export function calculateGeorgiaMetrics(records: GeorgiaRecord[]): DatasetMetric
     records.length;
 
   // Disparate Impact
-  const blackRecidivism = raceRecidivism['BLACK']?.rate || 0;
-  const whiteRecidivism = raceRecidivism['WHITE']?.rate || 0;
+  const blackRecidivism = raceRecidivism['African-American']?.rate || 0;
+  const whiteRecidivism = raceRecidivism['Caucasian']?.rate || 0;
   const disparateImpact = whiteRecidivism > 0 ? blackRecidivism / whiteRecidivism : 0;
 
   return {

@@ -43,9 +43,52 @@ function FairnessMetricCard({
   );
 }
 
+type FairnessStatus = "fair" | "warn" | "unfair";
+
+interface ModelFairnessData {
+  disparateImpact: { value: string; status: FairnessStatus };
+  statisticalParity: { value: string; status: FairnessStatus };
+  equalOpportunity: { value: string; status: FairnessStatus };
+  equalizedOdds: { value: string; status: FairnessStatus };
+  errorRates: { counts: number[]; labels: string[] };
+}
+
+const modelFairnessData: Record<string, ModelFairnessData> = {
+  "Logistic Regression": {
+    disparateImpact: { value: "0.61", status: "unfair" },
+    statisticalParity: { value: "-0.16", status: "unfair" },
+    equalOpportunity: { value: "-0.10", status: "warn" },
+    equalizedOdds: { value: "-0.08", status: "fair" },
+    errorRates: { counts: [42.1, 22.8, 29.5, 27.3], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+  },
+  "Random Forest": {
+    disparateImpact: { value: "0.58", status: "unfair" },
+    statisticalParity: { value: "-0.18", status: "unfair" },
+    equalOpportunity: { value: "-0.12", status: "warn" },
+    equalizedOdds: { value: "-0.09", status: "warn" },
+    errorRates: { counts: [44.8, 23.5, 31.2, 28.6], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+  },
+  "Decision Tree": {
+    disparateImpact: { value: "0.55", status: "unfair" },
+    statisticalParity: { value: "-0.20", status: "unfair" },
+    equalOpportunity: { value: "-0.14", status: "unfair" },
+    equalizedOdds: { value: "-0.11", status: "unfair" },
+    errorRates: { counts: [46.3, 24.1, 33.0, 30.2], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+  },
+  "XGBoost + Debiasing": {
+    disparateImpact: { value: "0.82", status: "fair" },
+    statisticalParity: { value: "-0.07", status: "fair" },
+    equalOpportunity: { value: "-0.05", status: "fair" },
+    equalizedOdds: { value: "-0.04", status: "fair" },
+    errorRates: { counts: [28.4, 24.0, 26.1, 25.5], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+  },
+};
+
 export default function FairnessPage() {
   const [protectedAttr, setProtectedAttr] = useState("race");
   const [selectedModel, setSelectedModel] = useState("Random Forest");
+
+  const currentData = modelFairnessData[selectedModel];
 
   return (
     <main className="page-shell">
@@ -107,30 +150,30 @@ export default function FairnessPage() {
             <div className="metrics-grid">
               <FairnessMetricCard
                 label="Disparate Impact"
-                value="0.58"
+                value={currentData.disparateImpact.value}
                 threshold="≥0.8"
-                status="unfair"
+                status={currentData.disparateImpact.status}
                 description="Ratio of negative predictions for protected vs unprotected group"
               />
               <FairnessMetricCard
                 label="Statistical Parity Diff"
-                value="-0.18"
+                value={currentData.statisticalParity.value}
                 threshold="±0.1"
-                status="unfair"
+                status={currentData.statisticalParity.status}
                 description="Difference in positive prediction rates"
               />
               <FairnessMetricCard
                 label="Equal Opportunity Diff"
-                value="-0.12"
+                value={currentData.equalOpportunity.value}
                 threshold="±0.1"
-                status="warn"
+                status={currentData.equalOpportunity.status}
                 description="Difference in true positive rates"
               />
               <FairnessMetricCard
                 label="Equalized Odds Diff"
-                value="-0.09"
+                value={currentData.equalizedOdds.value}
                 threshold="±0.1"
-                status="warn"
+                status={currentData.equalizedOdds.status}
                 description="Difference in FPR and FNR"
               />
             </div>
@@ -151,8 +194,8 @@ export default function FairnessPage() {
               </p>
             </div>
             <ClassDistributionChart
-              counts={[44.8, 23.5, 31.2, 28.6]}
-              labels={["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"]}
+              counts={currentData.errorRates.counts}
+              labels={currentData.errorRates.labels}
             />
           </div>
         </section>
