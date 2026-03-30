@@ -178,37 +178,46 @@ export default function ModelsPage() {
                 {/* Diagonal reference line */}
                 <line x1="40" y1="360" x2="360" y2="40" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="4" opacity="0.5" />
                 
-                {/* COMPAS (AUC 0.68) - Red */}
-                <path
-                  d="M 40 360 Q 80 340, 120 300 T 240 140 T 360 40"
-                  stroke="#ef4444"
-                  strokeWidth="3"
-                  fill="none"
-                />
-                
-                {/* Logistic Regression (AUC 0.72) - Blue */}
-                <path
-                  d="M 40 360 Q 70 330, 110 280 T 220 100 T 360 40"
-                  stroke="#0ea5e9"
-                  strokeWidth="3"
-                  fill="none"
-                />
-                
-                {/* Random Forest (AUC 0.74) - Green */}
-                <path
-                  d="M 40 360 Q 65 325, 100 270 T 210 80 T 360 40"
-                  stroke="#10b981"
-                  strokeWidth="3"
-                  fill="none"
-                />
-                
-                {/* Decision Tree (AUC 0.70) - Amber */}
-                <path
-                  d="M 40 360 Q 75 335, 115 290 T 230 120 T 360 40"
-                  stroke="#f59e0b"
-                  strokeWidth="3"
-                  fill="none"
-                />
+                {/* Clip to plot area */}
+                <defs>
+                  <clipPath id="plot-area">
+                    <rect x="40" y="40" width="320" height="320" />
+                  </clipPath>
+                </defs>
+
+                <g clipPath="url(#plot-area)">
+                  {/* COMPAS (AUC 0.68) - Red */}
+                  <path
+                    d="M 40 360 C 80 360, 160 280, 200 200 C 240 120, 300 60, 360 40"
+                    stroke="#ef4444"
+                    strokeWidth="3"
+                    fill="none"
+                  />
+
+                  {/* Logistic Regression (AUC 0.72) - Blue */}
+                  <path
+                    d="M 40 360 C 60 340, 120 240, 170 160 C 220 80, 290 50, 360 40"
+                    stroke="#0ea5e9"
+                    strokeWidth="3"
+                    fill="none"
+                  />
+
+                  {/* Random Forest (AUC 0.74) - Green */}
+                  <path
+                    d="M 40 360 C 50 330, 100 220, 150 140 C 200 60, 280 45, 360 40"
+                    stroke="#10b981"
+                    strokeWidth="3"
+                    fill="none"
+                  />
+
+                  {/* Decision Tree (AUC 0.70) - Amber */}
+                  <path
+                    d="M 40 360 C 70 350, 140 260, 185 180 C 230 100, 295 55, 360 40"
+                    stroke="#f59e0b"
+                    strokeWidth="3"
+                    fill="none"
+                  />
+                </g>
                 
                 {/* Axis labels */}
                 <text x="200" y="390" textAnchor="middle" fontSize="12" fill="#64748b">
