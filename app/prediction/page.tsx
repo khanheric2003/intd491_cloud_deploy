@@ -1,22 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { PredictionChart } from "@/components/PredictionChart";
 
 export default function PredictionPage() {
   const [formData, setFormData] = useState({
     age: 34,
     sex: "Male",
-    race: "African American",
     priorCrimes: 3,
     juvenileFelonies: 0,
+    juvenileMisdemeanors: 0,
+    juvenileOther: 0,
     chargeDegree: "Felony",
-    model: "Random Forest"
   });
 
   const [prediction, setPrediction] = useState<{
-    riskScore: number;
-    riskLevel: string;
+    probability: number;
+    classification: string;
   } | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -37,11 +36,11 @@ export default function PredictionPage() {
         body: JSON.stringify({
           age: formData.age,
           sex: formData.sex,
-          race: formData.race,
           prior_crimes: formData.priorCrimes,
           juvenile_felonies: formData.juvenileFelonies,
+          juvenile_misdemeanors: formData.juvenileMisdemeanors,
+          juvenile_other: formData.juvenileOther,
           charge_degree: formData.chargeDegree,
-          model: formData.model
         })
       });
 
@@ -49,8 +48,8 @@ export default function PredictionPage() {
 
       const data = await response.json();
       setPrediction({
-        riskScore: Math.round(data.risk_score * 100),
-        riskLevel: data.risk_score > 0.6 ? "High" : data.risk_score > 0.3 ? "Medium" : "Low"
+        probability: data.risk_score,
+        classification: data.risk_score >= 0.5 ? "Recidivism Likely" : "Recidivism Unlikely"
       });
     } catch (error) {
       console.error("Prediction error:", error);
@@ -60,13 +59,8 @@ export default function PredictionPage() {
     }
   };
 
-  const getRiskColor = (level: string) => {
-    switch (level) {
-      case "High": return "metric-red";
-      case "Medium": return "metric-amber";
-      case "Low": return "metric-green";
-      default: return "metric-blue";
-    }
+  const getClassColor = (classification: string) => {
+    return classification === "Recidivism Likely" ? "metric-red" : "metric-green";
   };
 
   return (
@@ -75,8 +69,9 @@ export default function PredictionPage() {
         <p className="eyebrow">Prediction Tool</p>
         <h1>Recidivism Risk Assessment</h1>
         <p>
-          Enter demographic and criminal history information to generate a risk prediction 
-          using multiple models. Compare predictions across algorithms and view feature importance.
+          Enter demographic and criminal history information to generate a risk prediction
+          using a logistic regression model trained on the COMPAS Florida dataset.
+          This model is race-blind — race is not used as a predictive feature.
         </p>
       </section>
 
@@ -116,21 +111,6 @@ export default function PredictionPage() {
               </div>
 
               <div className="form-group">
-                <label className="form-label">Race</label>
-                <select
-                  className="form-select"
-                  name="race"
-                  value={formData.race}
-                  onChange={handleInputChange}
-                >
-                  <option>African American</option>
-                  <option>Caucasian</option>
-                  <option>Hispanic</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div className="form-group">
                 <label className="form-label">Prior Crimes Count</label>
                 <input
                   className="form-input"
@@ -157,6 +137,32 @@ export default function PredictionPage() {
               </div>
 
               <div className="form-group">
+                <label className="form-label">Juvenile Misdemeanors</label>
+                <input
+                  className="form-input"
+                  type="number"
+                  name="juvenileMisdemeanors"
+                  min="0"
+                  max="10"
+                  value={formData.juvenileMisdemeanors}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Juvenile Other Offenses</label>
+                <input
+                  className="form-input"
+                  type="number"
+                  name="juvenileOther"
+                  min="0"
+                  max="10"
+                  value={formData.juvenileOther}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="form-group">
                 <label className="form-label">Charge Degree</label>
                 <select
                   className="form-select"
@@ -166,21 +172,6 @@ export default function PredictionPage() {
                 >
                   <option>Felony</option>
                   <option>Misdemeanor</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Model</label>
-                <select
-                  className="form-select"
-                  name="model"
-                  value={formData.model}
-                  onChange={handleInputChange}
-                >
-                  <option>Logistic Regression</option>
-                  <option>Random Forest</option>
-                  <option>Decision Tree</option>
-                  <option>XGBoost + Debiasing</option>
                 </select>
               </div>
 
@@ -200,36 +191,36 @@ export default function PredictionPage() {
           <div className="section-card__body">
             <div className="section-card__header">
               <h2>Prediction Result</h2>
-              <p>Risk assessment for this individual</p>
+              <p>Logistic Regression — trained on COMPAS Florida dataset</p>
             </div>
 
             {prediction ? (
               <>
-                <div className={`metric-card ${getRiskColor(prediction.riskLevel)}`}>
-                  <div className="metric-label">Predicted Risk Level</div>
-                  <div className="metric-value">{prediction.riskScore}%</div>
-                  <div className="metric-subtext">{prediction.riskLevel} Risk</div>
-                </div>
-
-                <div style={{ marginTop: "24px" }}>
-                  <div className="section-card__header">
-                    <h3>Model Comparison</h3>
-                    <p>Predictions across different models</p>
+                <div className={`metric-card ${getClassColor(prediction.classification)}`}>
+                  <div className="metric-label">Classification (threshold = 0.5)</div>
+                  <div className="metric-value">{prediction.classification}</div>
+                  <div className="metric-subtext">
+                    Probability of recidivism: {(prediction.probability * 100).toFixed(1)}%
                   </div>
-                  <PredictionChart
-                    counts={[65.4, 67.2, 69.1, 66.3]}
-                    labels={["COMPAS", "Logistic Reg", "Random Forest", "Decision Tree"]}
-                  />
                 </div>
 
                 <div style={{ marginTop: "24px" }}>
                   <div className="section-card__header">
-                    <h3>Interpretation</h3>
+                    <h3>Model Details</h3>
                   </div>
                   <p className="section-note">
-                    This prediction is based on historical data from the COMPAS Florida dataset. 
-                    The model considers prior criminal history, age, and other factors. 
-                    Remember: models can reflect historical biases in the data and criminal justice system.
+                    Accuracy: 68.6% | AUC: 0.731 | F1: 0.657
+                  </p>
+                  <p className="section-note">
+                    This prediction uses a real logistic regression model trained on the COMPAS dataset
+                    with L2 regularization and balanced class weights. The model is race-blind — race
+                    is excluded from the feature set. Key predictive features include prior crimes count,
+                    age, and charge degree.
+                  </p>
+                  <p className="section-note" style={{ marginTop: "8px" }}>
+                    Note: This model reflects patterns in historical criminal justice data, which
+                    may contain systemic biases. Predictions should not be used as the sole basis
+                    for any decisions.
                   </p>
                 </div>
               </>
