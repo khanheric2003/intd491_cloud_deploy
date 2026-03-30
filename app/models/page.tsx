@@ -311,8 +311,10 @@ export default function ModelsPage() {
               marginTop: "16px"
             }}>
               {[
+                { name: "COMPAS", tn: 1980, fp: 804, fn: 1000, tp: 1430 },
                 { name: "Logistic Regression", tn: 2104, fp: 680, fn: 820, tp: 1610 },
-                { name: "Random Forest", tn: 2240, fp: 544, fn: 748, tp: 1682 }
+                { name: "Random Forest", tn: 2240, fp: 544, fn: 748, tp: 1682 },
+                { name: "Decision Tree", tn: 2050, fp: 734, fn: 822, tp: 1608 }
               ].map((model) => (
                 <div key={model.name}>
                   <h4 style={{ margin: "0 0 12px 0", fontSize: "14px", fontWeight: 600 }}>
@@ -330,8 +332,8 @@ export default function ModelsPage() {
                       background: "#dcfce7",
                       textAlign: "center"
                     }}>
-                      <div style={{ fontSize: "12px", color: "#64748b" }}>TN</div>
-                      <div style={{ fontSize: "20px", fontWeight: 600 }}>{model.tn}</div>
+                      <div style={{ fontSize: "12px", color: "#64748b" }}>TP</div>
+                      <div style={{ fontSize: "20px", fontWeight: 600 }}>{model.tp}</div>
                     </div>
                     <div style={{
                       padding: "12px",
@@ -354,8 +356,8 @@ export default function ModelsPage() {
                       background: "#dbeafe",
                       textAlign: "center"
                     }}>
-                      <div style={{ fontSize: "12px", color: "#64748b" }}>TP</div>
-                      <div style={{ fontSize: "20px", fontWeight: 600 }}>{model.tp}</div>
+                      <div style={{ fontSize: "12px", color: "#64748b" }}>TN</div>
+                      <div style={{ fontSize: "20px", fontWeight: 600 }}>{model.tn}</div>
                     </div>
                   </div>
                 </div>
