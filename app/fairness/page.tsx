@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ClassDistributionChart } from "@/components/ClassDistributionChart";
+import { GroupedErrorRateChart } from "@/components/GroupedErrorRateChart";
 import { PredictionChart } from "@/components/PredictionChart";
 
 function FairnessMetricCard({
@@ -53,42 +54,100 @@ interface ModelFairnessData {
   errorRates: { counts: number[]; labels: string[] };
 }
 
-const modelFairnessData: Record<string, ModelFairnessData> = {
+const modelFairnessData: Record<string, Record<string, ModelFairnessData>> = {
   "Logistic Regression": {
-    disparateImpact: { value: "0.61", status: "unfair" },
-    statisticalParity: { value: "-0.16", status: "unfair" },
-    equalOpportunity: { value: "-0.10", status: "warn" },
-    equalizedOdds: { value: "-0.08", status: "fair" },
-    errorRates: { counts: [42.1, 22.8, 29.5, 27.3], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    race: {
+      disparateImpact: { value: "0.61", status: "unfair" },
+      statisticalParity: { value: "-0.16", status: "unfair" },
+      equalOpportunity: { value: "-0.10", status: "warn" },
+      equalizedOdds: { value: "-0.08", status: "fair" },
+      errorRates: { counts: [42.1, 22.8, 29.5, 27.3], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    },
+    sex: {
+      disparateImpact: { value: "0.72", status: "warn" },
+      statisticalParity: { value: "-0.08", status: "fair" },
+      equalOpportunity: { value: "-0.06", status: "fair" },
+      equalizedOdds: { value: "-0.05", status: "fair" },
+      errorRates: { counts: [35.2, 18.5], labels: ["Male: FPR", "Female: FPR"] },
+    },
   },
   "Random Forest": {
-    disparateImpact: { value: "0.58", status: "unfair" },
-    statisticalParity: { value: "-0.18", status: "unfair" },
-    equalOpportunity: { value: "-0.12", status: "warn" },
-    equalizedOdds: { value: "-0.09", status: "warn" },
-    errorRates: { counts: [44.8, 23.5, 31.2, 28.6], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    race: {
+      disparateImpact: { value: "0.58", status: "unfair" },
+      statisticalParity: { value: "-0.18", status: "unfair" },
+      equalOpportunity: { value: "-0.12", status: "warn" },
+      equalizedOdds: { value: "-0.09", status: "warn" },
+      errorRates: { counts: [44.8, 23.5, 31.2, 28.6], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    },
+    sex: {
+      disparateImpact: { value: "0.75", status: "warn" },
+      statisticalParity: { value: "-0.09", status: "fair" },
+      equalOpportunity: { value: "-0.07", status: "fair" },
+      equalizedOdds: { value: "-0.06", status: "fair" },
+      errorRates: { counts: [37.5, 19.8], labels: ["Male: FPR", "Female: FPR"] },
+    },
   },
   "Decision Tree": {
-    disparateImpact: { value: "0.55", status: "unfair" },
-    statisticalParity: { value: "-0.20", status: "unfair" },
-    equalOpportunity: { value: "-0.14", status: "unfair" },
-    equalizedOdds: { value: "-0.11", status: "unfair" },
-    errorRates: { counts: [46.3, 24.1, 33.0, 30.2], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    race: {
+      disparateImpact: { value: "0.55", status: "unfair" },
+      statisticalParity: { value: "-0.20", status: "unfair" },
+      equalOpportunity: { value: "-0.14", status: "unfair" },
+      equalizedOdds: { value: "-0.11", status: "unfair" },
+      errorRates: { counts: [46.3, 24.1, 33.0, 30.2], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+    },
+    sex: {
+      disparateImpact: { value: "0.68", status: "warn" },
+      statisticalParity: { value: "-0.11", status: "warn" },
+      equalOpportunity: { value: "-0.09", status: "warn" },
+      equalizedOdds: { value: "-0.08", status: "warn" },
+      errorRates: { counts: [39.2, 21.3], labels: ["Male: FPR", "Female: FPR"] },
+    },
   },
-  "XGBoost + Debiasing": {
-    disparateImpact: { value: "0.82", status: "fair" },
-    statisticalParity: { value: "-0.07", status: "fair" },
-    equalOpportunity: { value: "-0.05", status: "fair" },
-    equalizedOdds: { value: "-0.04", status: "fair" },
-    errorRates: { counts: [28.4, 24.0, 26.1, 25.5], labels: ["AA: FPR", "Cauc: FPR", "Hisp: FPR", "Other: FPR"] },
+};
+
+type DebiasMethod = "proxyVariableRemoval" | "thresholdAdjustment";
+
+interface DebiasData {
+  label: string;
+  accuracy: string;
+  accuracyPrevious: string;
+  fprGapBefore: string;
+  fprGapAfter: string;
+  aucBefore: string;
+  aucAfter: string;
+  description: string;
+}
+
+const debiasMethodData: Record<DebiasMethod, DebiasData> = {
+  proxyVariableRemoval: {
+    label: "Proxy Variable Removal",
+    accuracy: "56.3%",
+    accuracyPrevious: "68.5%",
+    fprGapBefore: "+0.146",
+    fprGapAfter: "+0.103",
+    aucBefore: "0.74",
+    aucAfter: "0.62",
+    description: "Removes race/sex from model features. Achieves fairness but significant accuracy loss (12.2%)."
   },
+  thresholdAdjustment: {
+    label: "Threshold Adjustment",
+    accuracy: "66.2%",
+    accuracyPrevious: "68.5%",
+    fprGapBefore: "+0.146",
+    fprGapAfter: "-0.002",
+    aucBefore: "0.74",
+    aucAfter: "0.73",
+    description: "Adjusts decision threshold per demographic group. Minimal accuracy loss (2.3%) while achieving fairness."
+  }
 };
 
 export default function FairnessPage() {
   const [protectedAttr, setProtectedAttr] = useState("race");
   const [selectedModel, setSelectedModel] = useState("Random Forest");
+  const [debiasMethod, setDebiasMethod] = useState<DebiasMethod>("thresholdAdjustment");
 
-  const currentData = modelFairnessData[selectedModel];
+  const currentData = modelFairnessData[selectedModel][protectedAttr];
+  const currentDebiasData = debiasMethodData[debiasMethod];
 
   return (
     <main className="page-shell">
@@ -133,7 +192,6 @@ export default function FairnessPage() {
                   <option value="Logistic Regression">Logistic Regression</option>
                   <option value="Random Forest">Random Forest</option>
                   <option value="Decision Tree">Decision Tree</option>
-                  <option value="XGBoost + Debiasing">XGBoost + Debiasing</option>
                 </select>
               </div>
             </div>
@@ -181,22 +239,21 @@ export default function FairnessPage() {
         </section>
 
         <section className="section-card">
-          <div className="section-card__body two-column">
-            <div>
-              <div className="section-card__header">
-                <h2>Error Rates by Demographic</h2>
-                <p>False Positive and False Negative rates</p>
-              </div>
-              <p className="section-note">
-                African Americans experience significantly higher false positive rates (44.8%) 
-                compared to Caucasians (23.5%). This disparity suggests the model is more likely 
-                to incorrectly flag African Americans as high-risk.
-              </p>
+          <div className="section-card__body">
+            <div className="section-card__header">
+              <h2>Error Rates by Demographic: FPR & FNR</h2>
+              <p>False Positive Rate (red) and False Negative Rate (amber) across demographic groups</p>
             </div>
-            <ClassDistributionChart
-              counts={currentData.errorRates.counts}
-              labels={currentData.errorRates.labels}
+            <GroupedErrorRateChart
+              data={[
+                { race: "All", fpr: 32.3, fnr: 37.4 },
+                { race: "Black", fpr: 44.8, fnr: 28.0 },
+                { race: "White", fpr: 23.5, fnr: 47.7 }
+              ]}
             />
+            <p className="section-note" style={{ marginTop: "16px" }}>
+              <strong>Key Finding:</strong> Black individuals show 21.3% higher FPR (44.8% vs 23.5%) but 19.7% lower FNR (28.0% vs 47.7%) compared to White individuals. This reflects a systematic bias toward over-flagging in the protected group and under-flagging in the privileged group.
+            </p>
           </div>
         </section>
 
@@ -207,6 +264,41 @@ export default function FairnessPage() {
               <p>Impact of different debiasing strategies on fairness metrics</p>
             </div>
 
+            <div style={{ marginBottom: "16px", display: "flex", gap: "12px" }}>
+              {Object.entries(debiasMethodData).map(([key, method]) => (
+                <button
+                  key={key}
+                  onClick={() => setDebiasMethod(key as DebiasMethod)}
+                  style={{
+                    padding: "10px 16px",
+                    borderRadius: "6px",
+                    border: debiasMethod === key ? "2px solid #0ea5e9" : "1px solid #e2e8f0",
+                    background: debiasMethod === key ? "#dbeafe" : "white",
+                    color: debiasMethod === key ? "#0c4a6e" : "#374151",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    transition: "all 0.2s"
+                  }}
+                >
+                  {method.label}
+                </button>
+              ))}
+            </div>
+
+            <div style={{
+              padding: "14px 16px",
+              background: "#f0f9ff",
+              borderRadius: "8px",
+              borderLeft: "4px solid #0ea5e9",
+              marginBottom: "16px",
+              fontSize: "13px",
+              color: "#0c4a6e"
+            }}>
+              <strong>Selected Method:</strong> {currentDebiasData.label}<br/>
+              {currentDebiasData.description}
+            </div>
+
             <div style={{ overflowX: "auto" }}>
               <table style={{
                 width: "100%",
@@ -215,48 +307,35 @@ export default function FairnessPage() {
               }}>
                 <thead>
                   <tr style={{ borderBottom: "2px solid #e2e8f0" }}>
-                    <th style={{ padding: "12px", textAlign: "left" }}>Method</th>
-                    <th style={{ padding: "12px", textAlign: "right" }}>Accuracy</th>
-                    <th style={{ padding: "12px", textAlign: "right" }}>AUC</th>
-                    <th style={{ padding: "12px", textAlign: "right" }}>DI</th>
-                    <th style={{ padding: "12px", textAlign: "right" }}>Status</th>
+                    <th style={{ padding: "12px", textAlign: "left" }}>Metric</th>
+                    <th style={{ padding: "12px", textAlign: "right" }}>Before Debiasing</th>
+                    <th style={{ padding: "12px", textAlign: "right" }}>After {currentDebiasData.label}</th>
+                    <th style={{ padding: "12px", textAlign: "right" }}>Change</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Baseline</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>69.1%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.74</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.58</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>
-                      <span className="badge badge-unfair">Unfair</span>
+                    <td style={{ padding: "12px", fontWeight: 500 }}>Accuracy</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>{currentDebiasData.accuracyPrevious}</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>{currentDebiasData.accuracy}</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: debiasMethod === "proxyVariableRemoval" ? "#ef4444" : "#f59e0b", fontWeight: 500 }}>
+                      {debiasMethod === "proxyVariableRemoval" ? "-12.2%" : "-2.3%"}
                     </td>
                   </tr>
                   <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Reweighting</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>66.8%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.71</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.72</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>
-                      <span className="badge badge-warn">Improved</span>
-                    </td>
-                  </tr>
-                  <tr style={{ borderBottom: "1px solid #e2e8f0" }}>
-                    <td style={{ padding: "12px" }}>Equalized Odds</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>64.2%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.68</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.85</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>
-                      <span className="badge badge-fair">Fair</span>
+                    <td style={{ padding: "12px", fontWeight: 500 }}>AUC</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>{currentDebiasData.aucBefore}</td>
+                    <td style={{ padding: "12px", textAlign: "right" }}>{currentDebiasData.aucAfter}</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#64748b" }}>
+                      {debiasMethod === "proxyVariableRemoval" ? "-0.12" : "-0.01"}
                     </td>
                   </tr>
                   <tr>
-                    <td style={{ padding: "12px" }}>Reject Option</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>65.5%</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.70</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>0.81</td>
-                    <td style={{ padding: "12px", textAlign: "right" }}>
-                      <span className="badge badge-fair">Fair</span>
+                    <td style={{ padding: "12px", fontWeight: 500 }}>FPR Gap (Black-White)</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#ef4444" }}>{currentDebiasData.fprGapBefore}</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#10b981" }}>{currentDebiasData.fprGapAfter}</td>
+                    <td style={{ padding: "12px", textAlign: "right", color: "#10b981", fontWeight: 500 }}>
+                      {debiasMethod === "proxyVariableRemoval" ? "-0.043" : "-0.148"}
                     </td>
                   </tr>
                 </tbody>
@@ -264,8 +343,9 @@ export default function FairnessPage() {
             </div>
 
             <p className="section-note" style={{ marginTop: "16px" }}>
-              The Reject Option method (recommended) achieves fairness while maintaining reasonable accuracy. 
-              This approach flags borderline predictions for human review instead of automated decisions.
+              <strong>Recommendation:</strong> {debiasMethod === "thresholdAdjustment" 
+                ? "Threshold Adjustment is recommended. It achieves fairness (FPR gap: -0.002) with minimal accuracy loss (2.3%), making it practical for deployment." 
+                : "Proxy Variable Removal achieves fairness but at significant accuracy cost (12.2%), making it less suitable for production systems where predictive performance matters."}
             </p>
           </div>
         </section>
